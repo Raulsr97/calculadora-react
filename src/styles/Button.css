@@ -1,0 +1,17 @@
+.container-button {
+    height: 63px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 63px;
+    color: white;
+    background-color: black;
+    font-size: 24px;
+}
+
+.operator {
+    background-color: darkorange;
+    color: black;
+}
+
