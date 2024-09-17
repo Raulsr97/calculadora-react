@@ -3,6 +3,7 @@ import Button from './components/Button';
 import Screen from './components/Screen';
 import Clear from './components/Clear';
 import { useState } from 'react';
+import { evaluate } from 'mathjs';
 
 function App() {
 
@@ -10,6 +11,16 @@ function App() {
 
   const agregarInput = val => {
     setInput(input + val)
+  }
+
+  const resolverInput = () => {
+
+    if (input) {
+      setInput(evaluate(input))
+    } else {
+      alert('porfavor ingrese valores para realizar los calculos.')
+    }
+    
   }
 
 
@@ -38,12 +49,12 @@ function App() {
           <Button manejarClic={agregarInput}>*</Button>
         </div>
         <div className='fila'>
-          <Button manejarClic={agregarInput}>=</Button>
+          <Button manejarClic={resolverInput}>=</Button>
           <Button manejarClic={agregarInput}>0</Button>
           <Button manejarClic={agregarInput}>.</Button>
           <Button manejarClic={agregarInput}>/</Button>
         </div>
-        <Clear>Clear</Clear>
+        <Clear manejarClear={() => setInput('')}>Clear</Clear>
       </div>
     </div>
   );

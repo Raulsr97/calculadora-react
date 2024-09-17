@@ -3,7 +3,7 @@ import '../styles/Clear.css'
 
 function Clear (props) {
     return (
-        <button className="clear-button">
+        <button className="clear-button" onClick={props.manejarClear}>
             {props.children}
         </button>
     )
